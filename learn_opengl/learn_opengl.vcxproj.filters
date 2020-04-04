@@ -18,7 +18,16 @@
     <ClCompile Include="..\..\..\..\libCode\other\glad\glad.c">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="4.Hello Window.cpp">
+    <ClCompile Include="5.Hello Triangle.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="4. Hello Window.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Template.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="test.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>
