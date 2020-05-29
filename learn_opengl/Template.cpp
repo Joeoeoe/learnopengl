@@ -7,9 +7,7 @@ void frame_buffer_size_callback(GLFWwindow *window, int width, int height);
 void preocessInput(GLFWwindow *window);
 
 int main() {
-	/*
-	 * 1. GLFW初始化
-	 */
+
 
 	glfwInit();//初始化GLFW
 
@@ -33,38 +31,26 @@ int main() {
 
 
 
-	/*
-	 * 2. GLAD初始化
-	 */
 
-	 //在调用OpenGL函数前需要对GLAD初始化
-	 //类型转换是啥意思？
+	//GLAD加载
 	if (!gladLoadGLLoader((GLADloadproc)glfwGetProcAddress)) {
 		cout << "Failed to initialize GLAD" << endl;
 		return -1;
 	}
 
-	/*
-	 * 3. Viewport
-	 */
 	glViewport(0, 0, 800, 600);
 
 	//监听窗口调整的回调函数
 	glfwSetFramebufferSizeCallback(window, frame_buffer_size_callback);
 
 
-	/*
-	 * 4. render loop
-	 */
 
 	 //使得窗口不会马上关闭
 	while (!glfwWindowShouldClose(window))//检测此窗口是否被要求关闭
 	{
 		preocessInput(window);//处理输入
 
-		/*
-		 * 7. 设置clear color及clear
-		 */
+
 		glClearColor(0.2f, 0.3f, 0.3f, 1.0f);
 		glClear(GL_COLOR_BUFFER_BIT);
 
@@ -77,9 +63,7 @@ int main() {
 		glfwPollEvents();//监听是否有任何事件被触发，比如键盘输入，鼠标移动，更新窗口状态，并调用对应的函数
 	}
 
-	/*
-	 * 5. 退出了render loop，销毁资源
-	 */
+
 	glfwTerminate();//销毁分配的内存空间
 
 
@@ -91,9 +75,7 @@ void frame_buffer_size_callback(GLFWwindow *window, int width, int height) {
 	glViewport(0, 0, width, height);
 }
 
-/*
- * 6. 处理输入
- */
+
 void preocessInput(GLFWwindow *window) {
 	/*
 	 * 如果输入的是Esc键，则退出循环，关闭窗口;

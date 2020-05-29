@@ -77,33 +77,7 @@ int main() {
 
 
 
-	/*
-	 * 七、设置VAO
-	 */
-	unsigned int VAO;
-	glGenVertexArrays(1, &VAO);
-	glBindVertexArray(VAO);
 
-
-	/*
-	 * 二、VBO设置
-	 */
-	unsigned int VBO;
-	glGenBuffers(1, &VBO);//生成buffer，设置VBO的buffer id
-	glBindBuffer(GL_ARRAY_BUFFER, VBO);//设置buffer类型，之后对GL_ARRAY_BUFFER的调用和配置也是指向VBO
-	glBufferData(GL_ARRAY_BUFFER, sizeof(vertices), vertices, GL_STATIC_DRAW);//复制用户自定义的data到当前的buffer
-
-
-	/*
-	 * 九、Element Buffer Objects
-	 * 要在VBO后设置！！！
-	 */
-
-	unsigned int EBO;
-	glGenBuffers(1, &EBO);
-
-	glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, EBO);
-	glBufferData(GL_ELEMENT_ARRAY_BUFFER, sizeof(indices), indices, GL_STATIC_DRAW);
 
 
 	/*
@@ -176,7 +150,7 @@ int main() {
 	}
 
 	//激活program，后面的render都会使用到此program
-	glUseProgram(shaderProgram);
+	//glUseProgram(shaderProgram);
 
 	//现在可以删除之前编译的shader了
 	glDeleteShader(vertexShader);
@@ -186,15 +160,51 @@ int main() {
 	//接下来告诉OpenGL如何解释GPU内存中的数据，如何把顶点数据连接到shader
 
 
+
+		/*
+	 * 七、设置VAO
+	 */
+	unsigned int VAO;
+	glGenVertexArrays(1, &VAO);
+	glBindVertexArray(VAO);
+
+
+	/*
+	 * 二、VBO设置
+	 */
+	unsigned int VBO;
+	glGenBuffers(1, &VBO);//生成buffer，设置VBO的buffer id
+	glBindBuffer(GL_ARRAY_BUFFER, VBO);//设置buffer类型，之后对GL_ARRAY_BUFFER的调用和配置也是指向VBO
+	glBufferData(GL_ARRAY_BUFFER, sizeof(vertices), vertices, GL_STATIC_DRAW);//复制用户自定义的data到当前的buffer
+
+
+	/*
+	 * 九、Element Buffer Objects
+	 * 要在VBO后设置！！！
+	 */
+
+	unsigned int EBO;
+	glGenBuffers(1, &EBO);
+
+	glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, EBO);
+	glBufferData(GL_ELEMENT_ARRAY_BUFFER, sizeof(indices), indices, GL_STATIC_DRAW);
+
+
+
+
+
 	/*
 	 * 六、连接顶点属性
 	 */
 
 	 //告诉OpenGL如何把顶点数据和vertex shader连接起来
 	glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 3 * sizeof(float), (void *)0);
-	//告诉顶点属性位置
-	glad_glEnableVertexAttribArray(0);
+	//告诉顶点属性对应vertex shader中的location
+	glEnableVertexAttribArray(0);
 
+
+	//解绑VAO
+	glBindVertexArray(0);
 
 
 
@@ -226,7 +236,7 @@ int main() {
 		 * 八、进行渲染
 		 */
 		glUseProgram(shaderProgram);
-		glBindVertexArray(VAO);
+		glBindVertexArray(VAO);//绑定对应的VAO。此例子中因为只有一个VAO，所以其实可绑可不绑
 		//glDrawArrays(GL_TRIANGLES, 0, 3);
 
 
@@ -234,7 +244,7 @@ int main() {
 		 * 十、使用EBO渲染
 		 */
 		glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_INT, 0);
-		//glBindVertexArray(0);
+		//glBindVertexArray(0);//也可以不解绑
 
 
 

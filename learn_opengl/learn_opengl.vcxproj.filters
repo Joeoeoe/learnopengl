@@ -13,6 +13,12 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="资源文件\fragment_shader">
+      <UniqueIdentifier>{bc93ac5d-b6c1-4e02-8feb-b392f7785075}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="资源文件\vertex_shader">
+      <UniqueIdentifier>{61c79993-6d9a-4e17-befb-4da40b22f756}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\..\..\libCode\other\glad\glad.c">
@@ -30,9 +36,39 @@
     <ClCompile Include="test.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="5.Hello_Triangle_exercise1.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="5.Hello_Triangle_exercise2.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="6.Shader_ins_outs.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="6.Shader_uniforms.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="6.Shader_more_attribute.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="6.Shader_reading_from_file.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="6.Shader_exercise1.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="6.Shader_exercise2.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="6.Shader_exercise3.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="resource.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Shader.h">
       <Filter>头文件</Filter>
     </ClInclude>
   </ItemGroup>
@@ -40,5 +76,25 @@
     <ResourceCompile Include="learn_opengl.rc">
       <Filter>资源文件</Filter>
     </ResourceCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="shader1.fs">
+      <Filter>资源文件\fragment_shader</Filter>
+    </None>
+    <None Include="shader1.vs">
+      <Filter>资源文件\vertex_shader</Filter>
+    </None>
+    <None Include="shader2_exercise1.vs">
+      <Filter>资源文件\vertex_shader</Filter>
+    </None>
+    <None Include="shader2_exercise2.vs">
+      <Filter>资源文件\vertex_shader</Filter>
+    </None>
+    <None Include="shader2_exercise3.vs">
+      <Filter>资源文件\vertex_shader</Filter>
+    </None>
+    <None Include="shader2_exercise3.fs">
+      <Filter>资源文件\fragment_shader</Filter>
+    </None>
   </ItemGroup>
 </Project>

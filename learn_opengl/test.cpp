@@ -196,7 +196,7 @@ int main() {
 	 //告诉OpenGL如何把顶点数据和vertex shader连接起来
 	glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 3 * sizeof(float), (void *)0);
 	//告诉顶点属性位置
-	glad_glEnableVertexAttribArray(0);
+	glEnableVertexAttribArray(0);
 
 
 

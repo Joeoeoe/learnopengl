@@ -1,3 +1,4 @@
 ﻿F:\visual studio\c++桌面开发\Common7\IDE\VC\VCTargets\Microsoft.CppBuild.targets(391,5): warning MSB8028: 中间目录(Debug\)包含从另一个项目(learn_opengl.vcxproj)共享的文件。   这会导致错误的清除和重新生成行为。
-  5.Hello Triangle.cpp
+  6.Shader_exercise3.cpp
+d:\xampp1\htdocs\joe\learning\opengl\learn_opengl\learn_opengl\6.shader_exercise3.cpp(93): warning C4244: “初始化”: 从“double”转换到“float”，可能丢失数据
   learn_opengl.vcxproj -> D:\xampp1\htdocs\Joe\Learning\opengl\learn_opengl\Debug\4.Hello Window.exe
